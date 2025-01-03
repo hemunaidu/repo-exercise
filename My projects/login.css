@@ -1,0 +1,123 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #141E30; /* Gradient background */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(to right, #243B55, #141E30); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(to right, #243B55, #141E30); /* Fx 3.6 - 15 */
+    background: linear-gradient(to right, #243B55, #141E30); /* Standard syntax */
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Hide overflow for rotating effects */
+}
+
+.login-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.login-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    animation: glow 2s infinite alternate;
+}
+
+.login-box h2 {
+    margin: 0 0 20px;
+    padding: 0;
+    color: white;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 10px 10px 5px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.2s;
+}
+input-group label {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    color: #fff;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #8e44ad;
+    font-size: 12px;
+}
+
+.input-group input:focus,
+.input-group input:valid {
+    border-color: #8e44ad;
+    border-bottom-width: 2px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #8e44ad;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #732d91;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px #8e44ad, 0 0 20px #8e44ad, 0 0 30px #8e44ad, 0 0 40px #8e44ad, 0 0 50px #8e44ad;
+    }
+    100% {
+        box-shadow: 0 0 20px #8e44ad, 0 0 30px #8e44ad, 0 0 40px #8e44ad, 0 0 50px #8e44ad, 0 0 60px #8e44ad;
+    }
+}
+
+.rotating-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
+    background-size: 50px 50px;
+    animation: rotate 10s linear infinite;
+    z-index: 5;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
